@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/minimum-number-of-changes-to-make-binary-string-beautiful/?envType=daily-question&envId=2024-11-05
 # We can decompose the whole string into disjoint blocks of size 2 and find the minimum number of changes required to make those blocks beautiful
-class Leetcode2914(object):
+class leetcode2914(object):
     def minChanges(self, s):
         """
         :type s: str
