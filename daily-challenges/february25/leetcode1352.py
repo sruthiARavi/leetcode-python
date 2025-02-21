@@ -12,14 +12,21 @@
 """
 class leetcode1352(object):
 
-    def __init__(self):
-        
-
+    def __init__(self):        
+        self.products = []
+        self.current_product = 1
+     
     def add(self, num):
         """
         :type num: int
         :rtype: None
         """
+        if num == 0:
+            self.products = []
+            self.current_product = 1
+        else:
+            self.current_product *= num
+            self.products.append(self.current_product)
         
 
     def getProduct(self, k):
@@ -27,6 +34,12 @@ class leetcode1352(object):
         :type k: int
         :rtype: int
         """
+        if k > len(self.products):
+            return 0
+        elif k == len(self.products):
+            return self.current_product
+        else:
+            return self.current_product / self.products[len(self.products) - k - 1]
         
 
 
