@@ -8,7 +8,7 @@
    ## If x is a negative integer, then abs(x) = -x.
    ## If x is a non-negative integer, then abs(x) = x.
 """
-class Solution(object):
+class leetcode1749(object):
     def maxAbsoluteSum(self, nums):
         """
         :type nums: List[int]
