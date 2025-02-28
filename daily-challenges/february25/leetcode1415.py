@@ -9,10 +9,35 @@
  # Return the kth string of this list or return an empty string if there are less than k happy strings of length n.
 """
 class leetcode1415(object):
+    def __init__(self):
+        self.happy_strings = []
+
     def getHappyString(self, n, k):
         """
         :type n: int
         :type k: int
         :rtype: str
         """
+        self.generateHappyStrings(n, k, "")
+        if len(self.happy_strings) < k:
+            return ""
+
+        return self.happy_strings[k-1]
+
+    
+    def generateHappyStrings(self, n, k, current_string):
+        if len(self.happy_strings) == k:
+            return
+        
+        if len(current_string) == n:
+            self.happy_strings.append(current_string)
+            print(self.happy_strings)
+            return 
+
+        for current_char in ["a", "b", "c"]:
+            if len(current_string) > 0 and current_string[-1] == current_char:
+                continue
+            
+            self.generateHappyStrings(n, k, current_string + current_char)
+        
         
