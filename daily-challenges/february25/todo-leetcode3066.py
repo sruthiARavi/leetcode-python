@@ -16,3 +16,14 @@ class leetcode3066(object):
         :type k: int
         :rtype: int
         """
+        heapq.heapify(nums) #nums becomes a heap 
+
+        num_operations = 0; 
+        while len(nums) >=2 and nums[0] < k: # The input is generated such that an answer always exists.
+            x = heapq.heappop(nums)
+            y = heapq.heappop(nums)
+            z = min(x,y) * 2 + max(x,y)
+            num_operations += 1
+            heapq.heappush(nums, z)
+
+        return num_operations 
